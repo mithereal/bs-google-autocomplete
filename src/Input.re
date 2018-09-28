@@ -21,7 +21,6 @@ let initAutocomplete = (id) => {
 
  let el = autocomplete(getElementById(doc, id), types );
 
- addListener(getElementById(doc, id), "place_changed", fillInAddress())
 
  Js.log(id);
 };

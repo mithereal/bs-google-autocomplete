@@ -15,6 +15,10 @@ country: string,
 postal_code: string
 };
 
+type autocomplete =
+| ADDLISTENER(string, unit)
+| GETPLACE
+
 type response = {.
 };
 
@@ -41,7 +45,7 @@ type setup = {
 
 [@bs.send] external preventEventDefault : (ReactEventRe.Form.t) => unit = "preventDefault";
 
-[@bs.new] external autocomplete : (domElement, setup) => response = "google.maps.places.Autocomplete";
+[@bs.new] external autocomplete : (domElement, setup) => autocomplete = "google.maps.places.Autocomplete";
 
 [@bs.new] external circle : (circle) => response = "google.maps.places.Circle";
 
