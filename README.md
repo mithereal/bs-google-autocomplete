@@ -1,18 +1,5 @@
-# Basic Reason Template
+# Reasonml Google Places Api Binding
 
-Hello! This project allows you to quickly get started with Reason and BuckleScript. If you wanted a more sophisticated version, try the `react` template (`bsb -theme react -init .`).
+#### Example reasonml google places api binding
 
-# Build
-```
-npm run build
-```
-
-# Build + Watch
-
-```
-npm run start
-```
-
-
-# Editor
-If you use `vscode`, Press `Windows + Shift + B` it will build automatically
+###### Docs: https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
