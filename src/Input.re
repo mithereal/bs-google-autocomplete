@@ -21,7 +21,7 @@ let fillInAddress = (autocomplete) => {
  let component_length = Array.length(components);
 
  let marshall = (components, len) => {
- Js.log(components)
+
   let el = switch (len) {
           | 1 =>  {
                    "street_number": "",
