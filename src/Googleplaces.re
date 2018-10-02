@@ -53,3 +53,75 @@ type setup = {
 [@bs.send] external getPlace : (autocomplete) => autocomplete = "getPlace";
 
 let types = setup(~types=[|"geocode"|]);
+
+let marshall = (components, len) => {
+
+  let el = switch (len) {
+          | 1 =>  {
+                   "street_number": "",
+                   "route":"",
+                   "locality": "",
+                   "administrative_area_level_1": "",
+                   "country": components[0]##long_name,
+                   "postal_code": "",
+                   }
+          | 2 =>  {
+                    "street_number": "",
+                    "route":"",
+                    "locality": "",
+                    "administrative_area_level_1": components[0]##short_name,
+                    "country": components[1]##long_name,
+                    "postal_code": "",
+          }
+          | 4 =>  {
+                    "street_number": "",
+                    "route":"",
+                    "locality": components[0]##long_name,
+                    "administrative_area_level_1": components[2]##short_name,
+                    "country": components[3]##long_name,
+                    "postal_code": "",
+          }
+          | 5 =>  {
+                    "street_number": "",
+                    "route":components[0]##long_name,
+                    "locality": "",
+                    "administrative_area_level_1": components[2]##short_name,
+                    "country": components[3]##long_name,
+                    "postal_code": components[4]##short_name,
+          }
+          | 6 =>  {
+                    "street_number": "",
+                    "route":"",
+                    "locality": components[1]##long_name,
+                    "administrative_area_level_1": components[3]##short_name,
+                    "country": components[4]##long_name,
+                    "postal_code": components[5]##short_name
+          }
+          | 7 =>  {
+                   "street_number": components[0]##long_name,
+                   "route": components[1]##long_name,
+                   "locality": components[2]##long_name,
+                   "administrative_area_level_1": components[4]##short_name,
+                   "country": components[5]##long_name,
+                   "postal_code": components[6]##short_name
+                   }
+          | 8 =>  {
+                    "street_number": components[0]##long_name,
+                    "route": components[1]##long_name,
+                    "locality": components[4]##long_name,
+                    "administrative_area_level_1": components[5]##short_name,
+                    "country": components[6]##long_name,
+                    "postal_code": components[7]##short_name
+                    }
+                    | 9 =>  {
+                    "street_number": components[0]##long_name,
+                    "route": components[1]##long_name,
+                    "locality": components[3]##long_name,
+                    "administrative_area_level_1": components[5]##short_name,
+                    "country": components[6]##long_name,
+                    "postal_code": components[7]##short_name ++ "-" ++ components[8]##short_name
+                    }
+        };
+
+    el
+ }
