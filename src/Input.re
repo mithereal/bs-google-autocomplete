@@ -1,6 +1,13 @@
 open Googleplaces
 open Webapi.Dom
 
+type state =
+ | INIT
+ | LOADED
+
+type action =
+| GEOLOCATE
+
 let componentForm = () => {
 "street_number": "short_name",
 "route": "long_name",
@@ -11,7 +18,6 @@ let componentForm = () => {
 };
 
 let component_array = [|"street_number","route","locality","administrative_area_level_1","country","postal_code"|]
-
 
 let fillInAddress = (autocomplete) => {
  let place = getPlace(autocomplete);
@@ -49,9 +55,19 @@ let fillInAddress = (autocomplete) => {
             };
 };
 
-let geolocate = () => {};
+let geolocate = () => {
+let navigator = Window.navigator(window);
 
-let component = ReasonReact.statelessComponent("Input");
+};
+
+
+let reducer = (action,_self) =>
+ switch(action) {
+ | GEOLOCATE => geolocate();
+                ReasonReact.Update(LOADED)
+
+}
+
 
 let initAutocomplete = (id) => {
 
@@ -62,14 +78,18 @@ let initAutocomplete = (id) => {
 ()
 };
 
+let component = ReasonReact.reducerComponent("Input");
+
 let make = (~placeholder, ~id, _children) => {
   ...component,
+    initialState: () => INIT,
+    reducer,
   didMount: self => {
        initAutocomplete(id);
       },
-  render: (_self) =>
+  render: (self) =>
   <div id = "input">
-  <input id= id placeholder= placeholder type_="text" />
+  <input id= id placeholder= placeholder type_="text" onFocus=(_event => self.send(GEOLOCATE))/>
 
   </div>
 };

@@ -25,6 +25,7 @@ type component = {.
 type autocomplete = {.
 [@bs.meth] "addListener" : (string, unit) => unit,
 [@bs.meth] "getPlace" : unit => unit,
+[@bs.meth] "setBounds" : unit => unit,
 "address_components" : array(component),
 };
 
