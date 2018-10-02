@@ -10,18 +10,7 @@ render: (_self) =>
                       placeholder="start address"
                       />
 
-                     <Input
-                       id="end_autocomplete"
-                       placeholder="end address"
-                       />
-
-                       <div id="add_element">
-                       <button> ( ReasonReact.string("+") ) </button>
-                       </div>
-
-                       <div id="submit">
-                       <button> ( ReasonReact.string("Submit") ) </button>
-                       </div>
+                      <Address />
 
                       </div>
 };

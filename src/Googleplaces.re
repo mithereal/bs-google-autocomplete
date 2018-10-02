@@ -7,12 +7,27 @@ type componentForm = {.
 "postal_code": string
 };
 
+type address_components = {.
+"street_number" : string,
+"route" : string,
+"locality" : string,
+"administrative_area_level_1" : string,
+"country" : string,
+"postal_code": string
+};
+
+type component = {.
+"long_name" : string,
+"short_name" : string,
+"types" : array(string)
+};
 
 type autocomplete = {.
 [@bs.meth] "addListener" : (string, unit) => unit,
 [@bs.meth] "getPlace" : unit => unit,
-"address_components" : array(string)
+"address_components" : array(component),
 };
+
 
 type geolocation = {.
   "lat": string,
