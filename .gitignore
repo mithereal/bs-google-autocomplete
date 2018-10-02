@@ -4,3 +4,8 @@
 npm-debug.log
 /lib/bs/
 /node_modules/
+/lib/
+/.vscode/
+/webpack.config.js
+/yarn.lock
+/yarn-error.log
