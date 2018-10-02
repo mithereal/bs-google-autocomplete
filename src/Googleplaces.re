@@ -1,11 +1,3 @@
-type domElement = {.
-"value": string
-};
-
-type document = {.
-[@bs.meth] "getElementById" : string => domElement
-};
-
 type componentForm = {.
 "street_number": string,
 "route": string,
@@ -20,10 +12,6 @@ type autocomplete = {.
 [@bs.meth] "addListener" : (string, unit) => unit,
 [@bs.meth] "getPlace" : unit => unit,
 "address_components" : array(string)
-};
-
-type response = {.
-
 };
 
 type geolocation = {.
@@ -41,13 +29,7 @@ type setup = {
   types: array(string),
 };
 
-[@bs.val] external doc : document = "document";
-
-[@bs.send] external getElementById : (document, string) => domElement = "getElementById";
-
-[@bs.send] external preventEventDefault : (ReactEventRe.Form.t) => unit = "preventDefault";
-
-[@bs.new] external autocomplete : (domElement, setup) => autocomplete = "google.maps.places.Autocomplete";
+[@bs.new] external autocomplete : (option(Dom.element), setup) => autocomplete = "google.maps.places.Autocomplete";
 
 [@bs.new] external circle : (circle) => autocomplete = "google.maps.places.Circle";
 

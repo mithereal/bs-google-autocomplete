@@ -1,4 +1,5 @@
 open Googleplaces
+open Webapi.Dom
 
 let componentForm = () => {
 "street_number": "short_name",
@@ -9,11 +10,19 @@ let componentForm = () => {
 "postal_code": "short_name"
 };
 
+let component_array = [|"street_number","route","locality","administrative_area_level_1","country","postal_code"|]
+
 let fillInAddress = (autocomplete) => {
  let place = getPlace(autocomplete);
  let componentForm = componentForm();
  let components = place##address_components;
+ let component_array_length = Array.length(component_array);
  let component_length = Array.length(components);
+
+ for (idx in 0 to component_array_length) {
+    let el = Document.getElementById(component_array[idx], document);
+
+ };
 
 Js.log(component_length);
 };
@@ -24,8 +33,9 @@ let component = ReasonReact.statelessComponent("Input");
 
 let initAutocomplete = (id) => {
 
- let el = autocomplete(getElementById(doc, id), types );
-addListener(el, "place_changed", () => fillInAddress(el));
+ let el = autocomplete(Document.getElementById(id, document), types );
+
+  addListener(el, "place_changed", () => fillInAddress(el));
 
  Js.log(el);
 };
@@ -38,5 +48,7 @@ let make = (~placeholder, ~id, _children) => {
   render: (_self) =>
   <div>
   <input id= id placeholder= placeholder type_="text" />
+  <Address />
+
   </div>
 };
