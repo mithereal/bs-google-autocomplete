@@ -57,7 +57,6 @@ let fillInAddress = (autocomplete) => {
 
 let geolocate = () => {
 let navigator = Window.navigator(window);
-
 };
 
 
