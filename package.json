@@ -1,6 +1,6 @@
 {
   "name": "google_places_autocomplete",
-  "description": "",
+  "description": "Google Places Autocomplete Reasonml",
   "version": "0.1.0",
   "author": "mithereal",
   "license": "MIT",
