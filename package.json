@@ -1,6 +1,6 @@
 {
-  "name": "google_places_autocomplete",
-  "description": "Google Places Autocomplete Reasonml",
+  "name": "bs-autocomplete",
+  "description": "Google Places Autocomplete bindings for Bucklescript",
   "version": "0.1.0",
   "author": "mithereal",
   "license": "MIT",
