@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "author": "mithereal",
   "license": "MIT",
+  "keywords": ["google", "autocomplete", "places"],
+  "homepage": "https://github.com/mithereal/bs-google-autocomplete",
+  "repositoy": "https://github.com/mithereal/bs-google-autocomplete.git",
+  "bugs": "https://github.com/mithereal/bs-google-autocomplete/issues",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
