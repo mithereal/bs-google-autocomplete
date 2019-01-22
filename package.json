@@ -1,7 +1,7 @@
 {
   "name": "bs-google-autocomplete",
   "description": "Google Places Autocomplete bindings for Bucklescript",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "mithereal",
   "license": "MIT",
   "keywords": ["google", "autocomplete", "places"],

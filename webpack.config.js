@@ -17,7 +17,7 @@ module: {
 };
 
 module.exports = {
-    entry: './src/Index.bs.js',
+    entry: './example/src/Index.bs.js',
     mode: isProd ? 'production' : 'development',
     output: {
         path: outputDir,
