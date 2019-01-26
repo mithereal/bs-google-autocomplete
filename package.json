@@ -8,6 +8,10 @@
   "homepage": "https://github.com/mithereal/bs-google-autocomplete",
   "repositoy": "https://github.com/mithereal/bs-google-autocomplete.git",
   "bugs": "https://github.com/mithereal/bs-google-autocomplete/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mithereal/bs-google-autocomplete.git"
+  },
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
