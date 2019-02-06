@@ -1,6 +1,6 @@
 # BuckleScript Google Places API Binding
 
-Example google places APU bindings for BuckleScript
+Example Google Places API bindings for BuckleScript
 
 ### Documentation
 
