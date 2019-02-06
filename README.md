@@ -1,14 +1,16 @@
-# Reasonml Google Places Api Binding
+# BuckleScript Google Places API Binding
 
-#### Example reasonml google places api binding
+Example google places APU bindings for BuckleScript
 
-###### Docs: https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+### Documentation
 
-###### Example:
-view the example folder for an example react app, the main logic happens in input.re.
+See https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
 
-ex.
+### Example
 
+See the example folder for an example react app. The main logic happens in input.re.
+
+```reason
 open Googleplaces
 
 open Webapi.Dom
@@ -103,3 +105,4 @@ let make = (~placeholder, ~id, _children) => {
 
   </div>
 };
+```
